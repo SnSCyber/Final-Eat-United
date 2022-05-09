@@ -1,0 +1,158 @@
+import React from 'react';
+import { Route, Switch, Router } from 'react-router-dom';
+import MainWrapper from '../MainWrapper';
+import NotFound404 from '../../DefaultPage/404/index';
+import LockScreen from '../../Account/LockScreen/index';
+import LogInPhoto from '../../Account/LogInPhoto/index';
+import RegisterPhoto from '../../Account/RegisterPhoto/index';
+import ResetPasswordPhoto from '../../Account/ResetPasswordPhoto';
+import WrappedRoutes from './WrappedRoutes';
+import { browserHistory, IndexRoute, Redirect} from 'react-router'
+import ECommerceDashboard from '../../Dashboards/ECommerce/index';
+import ECommerceDashboardEdit from '../../Dashboards/ECommerceTableEdit/index';
+import Profile from '../../Account/Profile/index';
+import EmailConfirmation from '../../Account/EmailConfimation/index';
+import ChartsJS from '../../Charts/ChartJs/index';
+import ReactVis from '../../Charts/ReactVis/index';
+import Recharts from '../../Charts/Recharts/index';
+import Calendar from '../../DefaultPage/Calendar/index';
+import FAQ from '../../DefaultPage/Faq/index';
+import Gallery from '../../DefaultPage/Gallery/index';
+import GalleryEdit from '../../DefaultPage/GalleryEdit/index';
+import InvoiceTemplate from '../../DefaultPage/InvoiceTemplate/index';
+import PricingCards from '../../DefaultPage/PricingCards/index';
+import ProjectSummary from '../../DefaultPage/ProjectSummary/index';
+import SearchResults from '../../DefaultPage/SearchResults/index';
+import TextEditor from '../../DefaultPage/TextEditor/index';
+import Cart from '../../ECommerce/Cart/index';
+import Catalog from '../../ECommerce/Catalog/index';
+import OrdersList from '../../ECommerce/OrdersList/index';
+import Payment from '../../ECommerce/Payment/index';
+import ProductEdit from '../../ECommerce/ProductEdit/index';
+import ProductView from '../../ECommerce/ProductView/index';
+import ProductPage from '../../ECommerce/ProductPage/index';
+import ProductsList from '../../ECommerce/ProductsList/index';
+import RestaurantsList from '../../ECommerce/RestaurantsList/index';
+import RestaurantEdit from '../../ECommerce/RestaurantEdit/index';
+import RestaurantView from '../../ECommerce/RestaurantView/index';
+import CustomersList from '../../ECommerce/CustomersList/index';
+import CustomersView from '../../ECommerce/CustomerView/index';
+import MenuList from '../../ECommerce/MenusList/index';
+import MenuAdd from '../../ECommerce/MenuEdit/index';
+import CouponList from '../../ECommerce/CouponsList/index';
+import CouponEdit from '../../ECommerce/CouponEdit/index';
+import CouponView from '../../ECommerce/CouponView/index';
+import ReviewsList from '../../ECommerce/ReviewsList/index';
+import BannersList from '../../ECommerce/BannersList/index';
+import BannerAdd from '../../ECommerce/BannerAdd/index';
+import BannerEdit from '../../ECommerce/BannerEdit/components/BannerEditCard';
+import BannerView from '../../ECommerce/BannerView/index';
+import BasicTables from '../../Tables/BasicTables/index';
+import GoogleMap from '../../Maps/GoogleMap/index';
+import VectorMap from '../../Maps/VectorMap/index';
+import VectorMapWithRequestData from '../../Maps/VectorMapWithRequestData';
+import DataTable from '../../Tables/DataTable/index';
+import DragAndDropTable from '../../Tables/DnDTable/index';
+import EditableTable from '../../Tables/EditableTable/index';
+import ResizableTable from '../../Tables/ResizableTable';
+import MaterialTable from '../../Tables/MaterialTable/index';
+import ApiTable from '../../Tables/ApiTable'
+import Alerts from '../../UI/Alerts/index';
+import Buttons from '../../UI/Buttons/index';
+import Carousel from '../../UI/Carousel/index';
+import Collapse from '../../UI/Collapse/index';
+import Grids from '../../UI/Grids';
+import Modals from '../../UI/Modals/index';
+import Notifications from '../../UI/Notification/index';
+import Panels from '../../UI/Panels/index';
+import ProgressBars from '../../UI/ProgressBars/index';
+import RangeSliders from '../../UI/RangeSliders/index';
+import Tabs from '../../UI/Tabs/index';
+import Timeline from '../../UI/Timeline/index';
+import Tooltips from '../../UI/Tooltips/index';
+import Typography from '../../UI/Typography/index';
+import Datepicker from '../../UI/Datepickers';
+import Layout from '../../Layout/index';
+
+const Routes = () => (
+  <MainWrapper>
+    <main>
+      <Switch>
+        <Route path="/404" component={NotFound404} />
+        <Route path="/lock_screen" component={LockScreen} />
+        <Route path="/log_in" component={LogInPhoto} />
+        <Route path="/register" component={RegisterPhoto} />
+        <Route path="/reset_password" component={ResetPasswordPhoto} />
+        <Route exact path="/e_commerce_dashboard" component={ECommerceDashboard} />
+        <Route path="/e_commerce_dashboard/edit/:index" component={ECommerceDashboardEdit} />
+        <Route path="/account/profile" component={Profile} />
+        <Route path="/account/email_confirmation" component={EmailConfirmation} />
+        <Route path="/charts/charts_js" component={ChartsJS} />
+        <Route path="/charts/react_vis" component={ReactVis} />
+        <Route path="/charts/recharts" component={Recharts} />
+        <Route path="/default_pages/calendar" component={Calendar} />
+        <Route path="/default_pages/faq" component={FAQ} />
+        <Route path="/default_pages/gallery" component={Gallery} />
+        <Route path="/default_pages/upload_add" component={GalleryEdit} />
+        <Route path="/default_pages/invoice_template" component={InvoiceTemplate} />
+        <Route path="/default_pages/pricing_cards" component={PricingCards} />
+        <Route path="/default_pages/project_summary" component={ProjectSummary} />
+        <Route path="/default_pages/search_results" component={SearchResults} />
+        <Route path="/default_pages/text_editor" component={TextEditor} />
+        <Route path="/e-commerce/cart" component={Cart} />
+        <Route path="/e-commerce/test" component={BasicTables} />
+        <Route path="/e-commerce/catalog" component={Catalog} />
+        <Route path="/e-commerce/orders_list" component={OrdersList} />
+        <Route path="/e-commerce/payment" component={Payment} />
+        <Route path="/e-commerce/product_add" component={ProductEdit} />
+        <Route path="/e-commerce/product_view" component={ProductView} />
+        <Route path="/e-commerce/product_page" component={ProductPage} />
+        <Route path="/e-commerce/products_list" component={ProductsList} />
+        <Route path="/e-commerce/restaurants_list" component={RestaurantsList} />
+        <Route path="/e-commerce/restaurant_add" component={RestaurantEdit} />
+        <Route path="/e-commerce/restaurant_view" component={RestaurantView} />
+        <Route path="/e-commerce/customers_list" component={CustomersList} />
+        <Route path="/e-commerce/customers_view" component={CustomersView} />
+        <Route path="/e-commerce/menus_list" component={MenuList} />
+        <Route path="/e-commerce/menus_add" component={MenuAdd} />
+        <Route path="/e-commerce/coupons_list" component={CouponList} /> 
+        <Route path="/e-commerce/coupon_add" component={CouponEdit} />  
+        <Route path="/e-commerce/coupon_view" component={CouponView} />  
+        <Route path="/e-commerce/reviews_list" component={ReviewsList} />    
+        <Route path="/e-commerce/banners_list" component={BannersList} />
+        <Route path="/e-commerce/banner_add" component={BannerAdd} />
+        <Route path="/e-commerce/banner_edit/:id" component={BannerEdit} />
+        <Route path="/e-commerce/banner_view" component={BannerView} />
+        <Route path="/maps/google_map" component={GoogleMap} />
+        <Route path="/maps/vector_map" component={VectorMap} />
+        <Route path="/maps/map_with_request" component={VectorMapWithRequestData} />
+        <Route path="/tables/basic_tables" component={BasicTables} />
+        <Route path="/tables/data_table" component={DataTable} />
+        <Route path="/tables/dnd_table" component={DragAndDropTable} />
+        <Route path="/tables/editable_table" component={EditableTable} />
+        <Route path="/tables/resizable_table" component={ResizableTable} />
+        <Route path="/tables/material_table" component={MaterialTable} />
+        <Route path="/tables/api_table" component={ApiTable} />
+        <Route path="/ui/alerts" component={Alerts} />
+        <Route path="/ui/buttons" component={Buttons} />
+        <Route path="/ui/carousel" component={Carousel} />
+        <Route path="/ui/collapse" component={Collapse} />
+        <Route path="/ui/datepicker" component={Datepicker} />
+        <Route path="/ui/grids" component={Grids} />
+        <Route path="/ui/modals" component={Modals} />
+        <Route path="/ui/notifications" component={Notifications} />
+        <Route path="/ui/panels" component={Panels} />
+        <Route path="/ui/progress_bars" component={ProgressBars} />
+        <Route path="/ui/range_sliders" component={RangeSliders} />
+        <Route path="/ui/tabs" component={Tabs} />
+        <Route path="/ui/timeline" component={Timeline} />
+        <Route path="/ui/tooltips" component={Tooltips} />
+        <Route path="/ui/typography" component={Typography} />
+        <Route path="/" component={LogInPhoto} />
+        <Redirect from="/404" to="/" exact/>
+      </Switch>
+    </main>
+  </MainWrapper>
+);
+
+export default Routes;
